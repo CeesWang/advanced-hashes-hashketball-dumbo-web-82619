@@ -130,10 +130,16 @@ def team_colors(team)
 end
 
 def team_names() 
+<<<<<<< HEAD
   result = [game_hash[:away][:team_name], game_hash[:home][:team_name] ]
 
 end
 
+=======
+  
+end
+
+>>>>>>> 891219cae80797d389231ec2797e08bdf445f54e
 def player_numbers(team)
   result = []
   if game_hash[:away][:team_name] == team
@@ -147,6 +153,7 @@ def player_numbers(team)
   end
   result.sort
 end
+<<<<<<< HEAD
 
 def player_stats(player)
   game_hash[:away][:players][0].include?(player) ? 
@@ -173,8 +180,27 @@ def big_shoe_rebounds()
   game_hash[:away][:players][0].include?(player_max) ? 
   game_hash[:away][:players][0][player_max][:rebounds] : game_hash[:home][:players][0][player_max][:rebounds]
 end
+=======
+>>>>>>> 891219cae80797d389231ec2797e08bdf445f54e
 
+def player_stats(player)
+  game_hash[:away][:players][0].include?(player) ? 
+  game_hash[:away][:players][0][player] : game_hash[:home][:players][0][player]
+end
 
+def big_shoe_rebounds()
+  max = 0
+  player_max = ""
+  
+  game_hash[:away][:players][0].each do |player| 
+    if max < player[:shoe]
+      max = player[:shoe]
+      player_max = player
+    end
+  end
+  
+  
+end
 
 
 
